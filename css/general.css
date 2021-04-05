@@ -1,0 +1,159 @@
+body {
+  font-size: 10pt;
+  font-family: "Century Schoolbook", "C059", "Times New Roman", serif;
+  color: #171D1C;
+  margin: 0px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body > header, body > footer {
+  text-align: center;
+  padding: 0.6em;
+  max-width: calc(100vw - 16px);
+  overflow-x: auto;
+  white-space: nowrap;
+}
+body > header {
+  border-bottom: 2px solid black;
+}
+body > header nav .lang-link {
+  font-style: italic;
+}
+body > header nav a:not(:last-child) {
+  margin-right: 1.5em;
+}
+body > article {
+  margin: 2em auto;
+  padding: 0px;
+  width: calc(100% - 3em);
+}
+body > footer {
+  border-top: 2px solid black;
+}
+
+#avi {
+  width: 25%;
+  margin-left: 1em;
+  border-radius: 50%;
+  float: right;
+}
+
+a {
+  color: #2853E2;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+a:hover {
+  border-bottom-color: #2853E2;
+}
+
+.header-anchor {
+  margin-left: 1em;
+  font-size: 0.8em;
+}
+.header-anchor::after {
+  content: "#";
+}
+
+table, table th, table td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+table th, table td {
+  padding: 5px 10px;
+  text-align: center;
+}
+
+p, blockquote {
+  overflow-wrap: break-word;
+}
+
+hr {
+  margin: 2em auto;
+  width: 50%;
+  border: none;
+  height: 2px;
+  background-color: #db4cb7;
+}
+
+h1 {
+  font-size: 2em;
+}
+h1:target {
+  text-decoration: underline;
+}
+
+h2 {
+  font-size: 1.55em;
+}
+h2:target {
+  text-decoration: underline;
+}
+
+h3 {
+  font-size: 1.33em;
+}
+h3:target {
+  text-decoration: underline;
+}
+
+h4 {
+  font-size: 1.2em;
+}
+h4:target {
+  text-decoration: underline;
+}
+
+h5 {
+  font-size: 1em;
+}
+h5:target {
+  text-decoration: underline;
+}
+
+h6 {
+  font-size: 0.8em;
+}
+h6:target {
+  text-decoration: underline;
+}
+
+h1#title {
+  text-align: center;
+  font-size: 3em;
+  margin-top: 0px;
+}
+
+#subtitle {
+  font-size: 1.5em;
+}
+
+@media only screen and (orientation: landscape) {
+  body {
+    font-size: 14pt;
+  }
+  body article {
+    width: 50%;
+    min-width: 300px;
+    max-width: 1000px;
+    padding: 0px;
+  }
+  body article img {
+    display: block;
+    width: 50%;
+    margin: auto;
+  }
+
+  .header-anchor {
+    display: none;
+  }
+
+  *:hover > .header-anchor {
+    display: inline;
+  }
+}
+
+/*# sourceMappingURL=general.css.map */
