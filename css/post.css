@@ -1,0 +1,143 @@
+.post-header {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 1.25em;
+  margin-bottom: 3em;
+  border-bottom: 1px solid #171D1C;
+}
+.post-header > * {
+  margin: 0.5em auto;
+}
+.post-header .breadcrumbs {
+  z-index: 0;
+  text-align: center;
+  list-style: none;
+  padding: 0px;
+  margin-bottom: 0em;
+}
+.post-header .breadcrumbs li {
+  display: inline;
+}
+.post-header .breadcrumbs li::after {
+  margin: 0px 0.5em;
+  content: "/";
+}
+.post-header h1#title {
+  margin-top: 0px;
+}
+.post-header #subtitle {
+  text-align: center;
+  font-weight: normal;
+}
+.post-header .tags {
+  padding: 0px;
+}
+.post-header .tags > li {
+  display: inline;
+  list-style: none;
+  font-size: 0.7em;
+  border: 1px solid #db4cb7;
+  border-radius: 5px;
+  padding: 2px 8px;
+}
+.post-header .tags > li:not(:last-of-type) {
+  margin-right: 5px;
+}
+
+.table-of-contents {
+  margin: auto;
+  margin-bottom: 3em;
+  border: 1px solid gray;
+  border-radius: 10px;
+  padding: 5px 10px;
+}
+.table-of-contents summary {
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  text-align: center;
+  font-variant: small-caps;
+}
+
+.split {
+  display: flex;
+  flex-direction: row;
+}
+.split > div {
+  width: 50%;
+}
+
+blockquote {
+  margin: 25px 0px;
+  padding: 0px 1em;
+  border-left: 5px solid #EF9CDA;
+}
+
+img {
+  width: 100%;
+}
+
+body {
+  counter-reset: h1;
+}
+body h1:not(#title):not(#subtitle) {
+  counter-reset: h2;
+  counter-increment: h1;
+}
+body h1:not(#title):not(#subtitle)::before {
+  content: counter(h1);
+  color: #444;
+  font-weight: normal;
+  margin-right: 1em;
+}
+body h2:not(#title):not(#subtitle) {
+  counter-reset: h3;
+  counter-increment: h2;
+}
+body h2:not(#title):not(#subtitle)::before {
+  content: counter(h1) '.'  counter(h2);
+  color: #444;
+  font-weight: normal;
+  margin-right: 1em;
+}
+body h3:not(#title):not(#subtitle) {
+  counter-reset: h4;
+  counter-increment: h3;
+}
+body h3:not(#title):not(#subtitle)::before {
+  content: counter(h1) '.' counter(h2) '.'  counter(h3);
+  color: #444;
+  font-weight: normal;
+  margin-right: 1em;
+}
+body h4:not(#title):not(#subtitle) {
+  counter-reset: h5;
+  counter-increment: h4;
+}
+body h4:not(#title):not(#subtitle)::before {
+  content: counter(h1) '.' counter(h2) '.' counter(h3) '.'  counter(h4);
+  color: #444;
+  font-weight: normal;
+  margin-right: 1em;
+}
+body h5:not(#title):not(#subtitle) {
+  counter-reset: h6;
+  counter-increment: h5;
+}
+body h5:not(#title):not(#subtitle)::before {
+  content: counter(h1) '.' counter(h2) '.' counter(h3) '.' counter(h4) '.'  counter(h5);
+  color: #444;
+  font-weight: normal;
+  margin-right: 1em;
+}
+body h6:not(#title):not(#subtitle) {
+  counter-increment: h6;
+}
+body h6:not(#title):not(#subtitle)::before {
+  content: counter(h1) '.' counter(h2) '.' counter(h3) '.' counter(h4) '.' counter(h5) '.'  counter(h6);
+  color: #444;
+  font-weight: normal;
+  margin-right: 1em;
+}
+
+/*# sourceMappingURL=post.css.map */

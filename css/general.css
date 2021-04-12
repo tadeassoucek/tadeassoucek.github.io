@@ -1,5 +1,5 @@
 body {
-  font-size: 10pt;
+  font-size: 11pt;
   font-family: "Century Schoolbook", "C059", "Times New Roman", serif;
   color: #171D1C;
   margin: 0px;
@@ -17,21 +17,21 @@ body > header, body > footer {
   white-space: nowrap;
 }
 body > header {
-  border-bottom: 2px solid black;
+  border-bottom: 2px solid #171D1C;
 }
-body > header nav .lang-link {
+body > header nav .translation-link {
   font-style: italic;
 }
 body > header nav a:not(:last-child) {
   margin-right: 1.5em;
 }
 body > article {
-  margin: 2em auto;
+  margin: 1em auto;
   padding: 0px;
   width: calc(100% - 3em);
 }
 body > footer {
-  border-top: 2px solid black;
+  border-top: 2px solid #171D1C;
 }
 
 #avi {
@@ -75,8 +75,8 @@ hr {
   margin: 2em auto;
   width: 50%;
   border: none;
-  height: 2px;
-  background-color: #db4cb7;
+  height: 1px;
+  background-color: #171D1C;
 }
 
 h1 {
@@ -124,11 +124,19 @@ h6:target {
 h1#title {
   text-align: center;
   font-size: 3em;
-  margin-top: 0px;
+  margin: 0.25em auto;
 }
 
 #subtitle {
-  font-size: 1.5em;
+  font-size: 1.25em;
+  font-style: italic;
+}
+
+time {
+  color: gray;
+}
+time::after, time::before {
+  color: gray;
 }
 
 @media only screen and (orientation: landscape) {
