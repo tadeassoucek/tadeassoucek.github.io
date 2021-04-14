@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   padding-bottom: 1.25em;
-  margin-bottom: 3em;
+  margin-bottom: 2em;
   border-bottom: 1px solid #171D1C;
 }
 .post-header > * {
@@ -60,6 +60,11 @@
   -webkit-user-select: none;
   text-align: center;
   font-variant: small-caps;
+}
+
+.tldr {
+  font-style: italic;
+  text-align: right;
 }
 
 .split {
