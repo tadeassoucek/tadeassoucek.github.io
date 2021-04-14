@@ -43,6 +43,9 @@
 .post-header .tags > li:not(:last-of-type) {
   margin-right: 5px;
 }
+.post-header time {
+  font-size: 0.7em;
+}
 
 .table-of-contents {
   margin: auto;
