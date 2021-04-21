@@ -1,3 +1,10 @@
+body[theme=dark] > header {
+  border-bottom-color: #ddd;
+}
+body[theme=dark] > footer {
+  border-top-color: #ddd;
+}
+
 body {
   font-size: 11pt;
   font-family: "Century Schoolbook", "C059", "Times New Roman", serif;
@@ -9,6 +16,10 @@ body {
   flex-direction: column;
   align-items: center;
 }
+body[theme=dark] {
+  background-color: #1e2127;
+  color: #ddd;
+}
 body > header, body > footer {
   display: flex;
   flex-direction: column;
@@ -17,9 +28,6 @@ body > header, body > footer {
   max-width: calc(100vw - 16px);
   overflow-x: auto;
   white-space: nowrap;
-}
-body footer > * {
-  margin: 0.2em 0px;
 }
 body > header {
   border-bottom: 2px solid #171D1C;
@@ -37,7 +45,9 @@ body > article {
 }
 body > footer {
   border-top: 2px solid #171D1C;
-  padding: 0.8em 0.25em;
+}
+body > footer > * {
+  margin: 0.2em 0px;
 }
 
 #avi {
@@ -55,6 +65,12 @@ a {
 a:hover {
   border-bottom-color: #2853E2;
 }
+body[theme=dark] a {
+  color: #e065c2;
+}
+body[theme=dark] a:hover {
+  border-bottom-color: #e065c2;
+}
 
 .header-anchor {
   margin-left: 1em;
@@ -64,14 +80,17 @@ a:hover {
   content: "#";
 }
 
-table {
+table:not(.excluded) {
   margin: auto;
 }
-table, table th, table td {
-  border: 1px solid black;
+table:not(.excluded), table:not(.excluded) th, table:not(.excluded) td {
+  border: 1px solid #171D1C;
   border-collapse: collapse;
 }
-table th, table td {
+body[theme=dark] table:not(.excluded), body[theme=dark] table:not(.excluded) th, body[theme=dark] table:not(.excluded) td {
+  border-color: #ddd;
+}
+table:not(.excluded) th, table:not(.excluded) td {
   padding: 5px 10px;
   text-align: center;
 }
@@ -86,6 +105,9 @@ hr {
   border: none;
   height: 1px;
   background-color: #171D1C;
+}
+body[theme=dark] hr {
+  background-color: #ddd;
 }
 
 h1 {

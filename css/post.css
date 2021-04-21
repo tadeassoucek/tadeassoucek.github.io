@@ -5,6 +5,9 @@
   margin-bottom: 2em;
   border-bottom: 1px solid #171D1C;
 }
+body[theme=dark] .post-header {
+  border-bottom-color: #ddd;
+}
 .post-header > * {
   margin: 0.5em auto;
 }
@@ -36,7 +39,7 @@
   display: inline;
   list-style: none;
   font-size: 0.7em;
-  border: 1px solid #db4cb7;
+  border: 1px solid #e065c2;
   border-radius: 5px;
   padding: 2px 8px;
 }
@@ -45,6 +48,11 @@
 }
 .post-header time {
   font-size: 0.7em;
+}
+
+.tldr-link {
+  text-align: right;
+  font-style: italic;
 }
 
 .table-of-contents {
@@ -60,11 +68,6 @@
   -webkit-user-select: none;
   text-align: center;
   font-variant: small-caps;
-}
-
-.tldr {
-  font-style: italic;
-  text-align: right;
 }
 
 .split {
