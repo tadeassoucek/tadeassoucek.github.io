@@ -1,12 +1,9 @@
 .post-header {
   display: flex;
   flex-direction: column;
-  padding-bottom: 1.25em;
+  padding-bottom: 0em;
   margin-bottom: 2em;
-  border-bottom: 1px solid #171D1C;
-}
-body[theme=dark] .post-header {
-  border-bottom-color: #ddd;
+  border-bottom: 2px solid #171D1C;
 }
 .post-header > * {
   margin: 0.5em auto;
@@ -79,13 +76,28 @@ body[theme=dark] .post-header {
 }
 
 blockquote {
-  margin: 25px 0px;
-  padding: 0px 1em;
-  border-left: 5px solid #EF9CDA;
+  margin: 1.5em 0em;
+  padding: 0px 2em;
+  border-left: 5px solid #555;
+  color: #555;
+  font-style: italic;
+}
+blockquote em {
+  font-style: normal;
 }
 
 img {
   width: 100%;
+}
+
+sup, sub {
+  vertical-align: baseline;
+  position: relative;
+  top: -0.4em;
+}
+
+sub {
+  top: 0.4em;
 }
 
 body {
