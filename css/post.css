@@ -100,6 +100,14 @@ sub {
   top: 0.4em;
 }
 
+#tldr {
+  box-shadow: 0px 0px 2px 2px #ccc;
+  border-radius: 10px;
+  margin-left: -1em;
+  margin-right: -1em;
+  padding: 1px 1em;
+}
+
 body {
   counter-reset: h1;
 }

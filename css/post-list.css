@@ -13,6 +13,12 @@
 .post-link .title {
   font-size: 1.3em;
 }
+.post-link .lang {
+  font-size: 0.8em;
+  border: 1px solid #e065c2;
+  border-radius: 5px;
+  padding: 1px 4px;
+}
 .post-link .translation-link {
   font-size: 0.8em;
   margin: 5px 0px;
