@@ -6,145 +6,91 @@ code {
   padding: 0px 1px;
 }
 
-.hljs {
+body .hljs {
   display: block;
   overflow-x: auto;
   border-color: gray;
   border-radius: 10px;
   padding: 0.5em;
 }
-
-body code {
-  color: #383a42;
-  background: #fafafa;
-  border-color: #ddd;
+body .hljs {
+  background: #fff;
+  color: #000;
+}
+body .xml .hljs-meta {
+  font-weight: bold;
+  font-style: italic;
+  color: #48b;
 }
 body .hljs-comment,
 body .hljs-quote {
-  color: #a0a1a7;
   font-style: italic;
+  color: #070;
 }
-body .hljs-doctag,
-body .hljs-keyword,
-body .hljs-formula {
-  color: #a626a4;
-}
-body .hljs-section,
 body .hljs-name,
-body .hljs-selector-tag,
-body .hljs-deletion,
-body .hljs-subst {
-  color: #e45649;
+body .hljs-keyword {
+  color: #808;
 }
-body .hljs-literal {
-  color: #0184bb;
+body .hljs-name,
+body .hljs-attr {
+  font-weight: bold;
 }
-body .hljs-string,
-body .hljs-regexp,
-body .hljs-addition,
-body .hljs-attribute,
-body .hljs-meta-string {
-  color: #50a14f;
+body .hljs-string {
+  font-weight: normal;
 }
-body .hljs-built_in,
-body .hljs-class .hljs-title {
-  color: #c18401;
-}
-body .hljs-attr,
 body .hljs-variable,
-body .hljs-template-variable,
-body .hljs-type,
-body .hljs-selector-class,
-body .hljs-selector-attr,
-body .hljs-selector-pseudo,
-body .hljs-number {
-  color: #986801;
+body .hljs-template-variable {
+  color: #477;
 }
+body .hljs-code,
+body .hljs-string,
+body .hljs-meta-string,
+body .hljs-number,
+body .hljs-regexp,
+body .hljs-link {
+  color: #00f;
+}
+body .hljs-title,
 body .hljs-symbol,
 body .hljs-bullet,
-body .hljs-link,
-body .hljs-meta,
-body .hljs-selector-id,
-body .hljs-title {
-  color: #4078f2;
+body .hljs-built_in {
+  color: #f40;
 }
-body .hljs-emphasis {
+body .hljs-section,
+body .hljs-meta {
+  color: #642;
+}
+body .hljs-title.class_,
+body .hljs-class .hljs-title,
+body .hljs-type {
+  color: #639;
+}
+body .hljs-title.function_,
+body .hljs-function .hljs-title,
+body .hljs-attr,
+body .hljs-subst {
+  color: #000;
+}
+body .hljs-formula {
+  background-color: #eee;
   font-style: italic;
 }
+body .hljs-addition {
+  background-color: #beb;
+}
+body .hljs-deletion {
+  background-color: #fbb;
+}
+body .hljs-selector-id,
+body .hljs-selector-class {
+  color: #964;
+}
+body .hljs-doctag,
 body .hljs-strong {
   font-weight: bold;
 }
-body .hljs-link {
-  text-decoration: underline;
-}
-
-body[theme=dark] code {
-  color: #abb2bf;
-  background: #282c34;
-  border-color: #282c34;
-}
-body[theme=dark] .hljs {
-  color: #abb2bf;
-  background: #282c34;
-}
-body[theme=dark] .hljs-comment,
-body[theme=dark] .hljs-quote {
-  color: #5c6370;
+body .hljs-emphasis {
   font-style: italic;
-}
-body[theme=dark] .hljs-doctag,
-body[theme=dark] .hljs-keyword,
-body[theme=dark] .hljs-formula {
-  color: #c678dd;
-}
-body[theme=dark] .hljs-section,
-body[theme=dark] .hljs-name,
-body[theme=dark] .hljs-selector-tag,
-body[theme=dark] .hljs-deletion,
-body[theme=dark] .hljs-subst {
-  color: #e06c75;
-}
-body[theme=dark] .hljs-literal {
-  color: #56b6c2;
-}
-body[theme=dark] .hljs-string,
-body[theme=dark] .hljs-regexp,
-body[theme=dark] .hljs-addition,
-body[theme=dark] .hljs-attribute,
-body[theme=dark] .hljs-meta-string {
-  color: #98c379;
-}
-body[theme=dark] .hljs-attr,
-body[theme=dark] .hljs-variable,
-body[theme=dark] .hljs-template-variable,
-body[theme=dark] .hljs-type,
-body[theme=dark] .hljs-selector-class,
-body[theme=dark] .hljs-selector-attr,
-body[theme=dark] .hljs-selector-pseudo,
-body[theme=dark] .hljs-number {
-  color: #d19a66;
-}
-body[theme=dark] .hljs-symbol,
-body[theme=dark] .hljs-bullet,
-body[theme=dark] .hljs-link,
-body[theme=dark] .hljs-meta,
-body[theme=dark] .hljs-selector-id,
-body[theme=dark] .hljs-title {
-  color: #61aeee;
-}
-body[theme=dark] .hljs-built_in,
-body[theme=dark] .hljs-title.hljs-class,
-body[theme=dark] .hljs-class .hljs-title {
-  color: #e6c07b;
-}
-body[theme=dark] .hljs-emphasis {
-  font-style: italic;
-}
-body[theme=dark] .hljs-strong {
-  font-weight: bold;
-}
-body[theme=dark] .hljs-link {
-  text-decoration: underline;
 }
 
 /*# sourceMappingURL=code.css.map */

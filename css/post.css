@@ -52,6 +52,14 @@
   font-style: italic;
 }
 
+#tldr:target {
+  box-shadow: 0px 0px 2px 2px #ccc;
+  border-radius: 10px;
+  margin-left: -1em;
+  margin-right: -1em;
+  padding: 1px 1em;
+}
+
 .table-of-contents {
   margin: auto;
   margin-bottom: 3em;
@@ -86,6 +94,14 @@ blockquote em {
   font-style: normal;
 }
 
+.footnotes {
+  border-top: 1px solid black;
+  width: 60%;
+  margin: auto;
+  margin-top: 3em;
+  padding: 0px 1em;
+}
+
 img {
   width: 100%;
 }
@@ -100,71 +116,63 @@ sub {
   top: 0.4em;
 }
 
-#tldr {
-  box-shadow: 0px 0px 2px 2px #ccc;
-  border-radius: 10px;
-  margin-left: -1em;
-  margin-right: -1em;
-  padding: 1px 1em;
-}
-
 body {
   counter-reset: h1;
 }
-body h1:not(#title):not(#subtitle) {
+body h1:not(#title):not(#subtitle):not(#footnotes) {
   counter-reset: h2;
   counter-increment: h1;
 }
-body h1:not(#title):not(#subtitle)::before {
+body h1:not(#title):not(#subtitle):not(#footnotes)::before {
   content: counter(h1);
   color: #444;
   font-weight: normal;
   margin-right: 1em;
 }
-body h2:not(#title):not(#subtitle) {
+body h2:not(#title):not(#subtitle):not(#footnotes) {
   counter-reset: h3;
   counter-increment: h2;
 }
-body h2:not(#title):not(#subtitle)::before {
+body h2:not(#title):not(#subtitle):not(#footnotes)::before {
   content: counter(h1) '.'  counter(h2);
   color: #444;
   font-weight: normal;
   margin-right: 1em;
 }
-body h3:not(#title):not(#subtitle) {
+body h3:not(#title):not(#subtitle):not(#footnotes) {
   counter-reset: h4;
   counter-increment: h3;
 }
-body h3:not(#title):not(#subtitle)::before {
+body h3:not(#title):not(#subtitle):not(#footnotes)::before {
   content: counter(h1) '.' counter(h2) '.'  counter(h3);
   color: #444;
   font-weight: normal;
   margin-right: 1em;
 }
-body h4:not(#title):not(#subtitle) {
+body h4:not(#title):not(#subtitle):not(#footnotes) {
   counter-reset: h5;
   counter-increment: h4;
 }
-body h4:not(#title):not(#subtitle)::before {
+body h4:not(#title):not(#subtitle):not(#footnotes)::before {
   content: counter(h1) '.' counter(h2) '.' counter(h3) '.'  counter(h4);
   color: #444;
   font-weight: normal;
   margin-right: 1em;
 }
-body h5:not(#title):not(#subtitle) {
+body h5:not(#title):not(#subtitle):not(#footnotes) {
   counter-reset: h6;
   counter-increment: h5;
 }
-body h5:not(#title):not(#subtitle)::before {
+body h5:not(#title):not(#subtitle):not(#footnotes)::before {
   content: counter(h1) '.' counter(h2) '.' counter(h3) '.' counter(h4) '.'  counter(h5);
   color: #444;
   font-weight: normal;
   margin-right: 1em;
 }
-body h6:not(#title):not(#subtitle) {
+body h6:not(#title):not(#subtitle):not(#footnotes) {
   counter-increment: h6;
 }
-body h6:not(#title):not(#subtitle)::before {
+body h6:not(#title):not(#subtitle):not(#footnotes)::before {
   content: counter(h1) '.' counter(h2) '.' counter(h3) '.' counter(h4) '.' counter(h5) '.'  counter(h6);
   color: #444;
   font-weight: normal;

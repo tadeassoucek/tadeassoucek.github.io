@@ -39,13 +39,6 @@ body > footer > * {
   margin: 0.2em 0px;
 }
 
-#avi {
-  width: 25%;
-  margin-left: 1em;
-  border-radius: 50%;
-  float: right;
-}
-
 a {
   color: #2853E2;
   text-decoration: none;
