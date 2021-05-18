@@ -1,0 +1,14 @@
+.phantom {
+  visibility: hidden;
+}
+
+.indent {
+  margin-right: 2.5em;
+}
+
+article.poem {
+  margin: auto;
+  width: max-content;
+}
+
+/*# sourceMappingURL=poetry.css.map */

@@ -12,13 +12,14 @@ body {
 body > header, body > footer {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: left;
   padding: 0.6em;
   max-width: calc(100vw - 16px);
   overflow-x: auto;
   white-space: nowrap;
 }
 body > header {
+  width: 100%;
   border-bottom: 2px solid #171D1C;
 }
 body > header nav .translation-link {
@@ -140,12 +141,16 @@ time::after, time::before {
   color: gray;
 }
 
-@media only screen and (orientation: landscape) {
+@media only screen and (min-width: 900px) {
   body {
     font-size: 14pt;
   }
+  body > header, body > footer {
+    width: initial;
+    align-items: center;
+  }
   body main {
-    width: 50%;
+    width: 75%;
     min-width: 300px;
     max-width: 1000px;
     padding: 0px;
@@ -162,6 +167,11 @@ time::after, time::before {
 
   *:hover > .header-anchor {
     display: inline;
+  }
+}
+@media only screen and (min-width: 1400px) {
+  body main {
+    width: 50%;
   }
 }
 @media only print {
