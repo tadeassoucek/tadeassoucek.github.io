@@ -3,7 +3,13 @@
   flex-direction: column;
   padding-bottom: 0em;
   margin-bottom: 2em;
-  border-bottom: 2px solid #171D1C;
+  border-bottom: 2px solid;
+}
+body[theme=classic] .post-header {
+  border-color: black;
+}
+body[theme=monochrome] .post-header {
+  border-color: #aaa;
 }
 .post-header > * {
   margin: 0.5em auto;
@@ -36,9 +42,15 @@
   display: inline;
   list-style: none;
   font-size: 0.7em;
-  border: 1px solid #e065c2;
+  border: 1px solid;
   border-radius: 5px;
   padding: 2px 8px;
+}
+body[theme=classic] .post-header .tags > li {
+  border-color: #e065c2;
+}
+body[theme=monochrome] .post-header .tags > li {
+  border-color: #aaa;
 }
 .post-header .tags > li:not(:last-of-type) {
   margin-right: 5px;
@@ -86,9 +98,16 @@
 blockquote {
   margin: 1.5em 0em;
   padding: 0px 2em;
-  border-left: 5px solid #555;
-  color: #555;
+  border-left: 5px solid;
   font-style: italic;
+}
+body[theme=classic] blockquote {
+  border-color: #e065c2;
+  color: #e065c2;
+}
+body[theme=monochrome] blockquote {
+  border-color: #555;
+  color: #555;
 }
 blockquote em {
   font-style: normal;

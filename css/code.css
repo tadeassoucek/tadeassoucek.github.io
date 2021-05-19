@@ -6,90 +6,108 @@ code {
   padding: 2px 3px;
 }
 
-body .hljs {
+.hljs {
   display: block;
   overflow-x: auto;
   border-color: gray;
   border-radius: 10px;
   padding: 0.5em;
 }
-body .hljs {
+
+.hljs {
   background: #fff;
   color: #000;
 }
-body .xml .hljs-meta {
+
+.xml .hljs-meta {
   font-weight: bold;
   font-style: italic;
   color: #48b;
 }
-body .hljs-comment,
-body .hljs-quote {
+
+.hljs-comment,
+.hljs-quote {
   font-style: italic;
   color: #070;
 }
-body .hljs-name,
-body .hljs-keyword {
+
+.hljs-name,
+.hljs-keyword {
   color: #808;
 }
-body .hljs-name,
-body .hljs-attr {
+
+.hljs-name,
+.hljs-attr {
   font-weight: bold;
 }
-body .hljs-string {
+
+.hljs-string {
   font-weight: normal;
 }
-body .hljs-variable,
-body .hljs-template-variable {
+
+.hljs-variable,
+.hljs-template-variable {
   color: #477;
 }
-body .hljs-code,
-body .hljs-string,
-body .hljs-meta-string,
-body .hljs-number,
-body .hljs-regexp,
-body .hljs-link {
+
+.hljs-code,
+.hljs-string,
+.hljs-meta-string,
+.hljs-number,
+.hljs-regexp,
+.hljs-link {
   color: #00f;
 }
-body .hljs-title,
-body .hljs-symbol,
-body .hljs-bullet,
-body .hljs-built_in {
+
+.hljs-title,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-built_in {
   color: #f40;
 }
-body .hljs-section,
-body .hljs-meta {
+
+.hljs-section,
+.hljs-meta {
   color: #642;
 }
-body .hljs-title.class_,
-body .hljs-class .hljs-title,
-body .hljs-type {
+
+.hljs-title.class_,
+.hljs-class .hljs-title,
+.hljs-type {
   color: #639;
 }
-body .hljs-title.function_,
-body .hljs-function .hljs-title,
-body .hljs-attr,
-body .hljs-subst {
+
+.hljs-title.function_,
+.hljs-function .hljs-title,
+.hljs-attr,
+.hljs-subst {
   color: #000;
 }
-body .hljs-formula {
+
+.hljs-formula {
   background-color: #eee;
   font-style: italic;
 }
-body .hljs-addition {
+
+.hljs-addition {
   background-color: #beb;
 }
-body .hljs-deletion {
+
+.hljs-deletion {
   background-color: #fbb;
 }
-body .hljs-selector-id,
-body .hljs-selector-class {
+
+.hljs-selector-id,
+.hljs-selector-class {
   color: #964;
 }
-body .hljs-doctag,
-body .hljs-strong {
+
+.hljs-doctag,
+.hljs-strong {
   font-weight: bold;
 }
-body .hljs-emphasis {
+
+.hljs-emphasis {
   font-style: italic;
 }
 

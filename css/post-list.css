@@ -12,9 +12,15 @@
 }
 .post-link .lang {
   font-size: 0.5em;
-  border: 1px solid #e065c2;
+  border: 1px solid;
   border-radius: 5px;
   padding: 1px 4px;
+}
+body[theme=classic] .post-link .lang {
+  border-color: #e065c2;
+}
+body[theme=monochrome] .post-link .lang {
+  border-color: #aaa;
 }
 .post-link .translation-link {
   font-size: 0.8em;
