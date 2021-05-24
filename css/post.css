@@ -50,7 +50,7 @@ body[theme=classic] .post-header .tags > li {
   border-color: #e065c2;
 }
 body[theme=monochrome] .post-header .tags > li {
-  border-color: #aaa;
+  border-color: #555;
 }
 .post-header .tags > li:not(:last-of-type) {
   margin-right: 5px;
@@ -100,14 +100,6 @@ blockquote {
   padding: 0px 2em;
   border-left: 5px solid;
   font-style: italic;
-}
-body[theme=classic] blockquote {
-  border-color: #e065c2;
-  color: #e065c2;
-}
-body[theme=monochrome] blockquote {
-  border-color: #555;
-  color: #555;
 }
 blockquote em {
   font-style: normal;

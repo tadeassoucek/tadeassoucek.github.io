@@ -3,7 +3,8 @@
 <html>
 
 <head>
-  <title>Article list&ensp;&dagger;&ensp;Tadeáš Souček
+  <title>Articles
+    &bull; Tadeáš Souček
   </title>
 
   <meta charset="utf-8">
@@ -15,28 +16,47 @@
   
     <link rel="stylesheet" href="/css/post-list.css">
   
+
+  
 </head>
 
 <body id="top" theme="classic">
   <header>
     <nav>
       <a href="/en">Home</a>
+      
       <a href="/en/articles">Articles</a>
       <a href="/en/prose">Prose</a>
       <a href="/en/poetry">Poetry</a>
       <a href="/en/about">About</a>
-  <a class="translation-link" href="/cs/clanky">Česky</a>
-</nav>
+      
+      
+        <a class="translation-link" href="/cs/clanky">Česky</a>
+      
+    </nav>
+
+    <script>
+      var nodes = document.querySelectorAll("body>header>nav>a");
+      nodes[1].href = "/en/posts?collections=articles";
+      nodes[2].href = "/en/posts?collections=prose";
+      nodes[3].href = "/en/posts?collections=poetry";
+    </script>
   </header>
 
   <main>
     
 
 
-<h1 id="title">Article list</h1>
+<script>
+  window.location = "/en/posts?collections=article";
+</script>
 
+<noscript>
+  <h1 id="title">Articles</h1>
 
   
+  
+    
   
     <div class="post-link">
       
@@ -55,8 +75,8 @@
     </div>
   
 
-
   
+    
   
     <div class="post-link">
       
@@ -75,7 +95,8 @@
     </div>
   
 
-
+  
+</noscript>
 
   </main>
 

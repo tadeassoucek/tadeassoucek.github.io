@@ -3,7 +3,8 @@
 <html>
 
 <head>
-  <title>Welcome Home&ensp;&dagger;&ensp;Tadeáš Souček
+  <title>Welcome Home
+    &bull; Tadeáš Souček
   </title>
 
   <meta charset="utf-8">
@@ -13,18 +14,31 @@
 
   <link rel="stylesheet" href="/css/general.css">
   
+
+  
 </head>
 
 <body id="top" theme="classic">
   <header>
     <nav>
       <a href="/en">Home</a>
+      
       <a href="/en/articles">Articles</a>
       <a href="/en/prose">Prose</a>
       <a href="/en/poetry">Poetry</a>
       <a href="/en/about">About</a>
-  <a class="translation-link" href="/cs/">Česky</a>
-</nav>
+      
+      
+        <a class="translation-link" href="/cs/">Česky</a>
+      
+    </nav>
+
+    <script>
+      var nodes = document.querySelectorAll("body>header>nav>a");
+      nodes[1].href = "/en/posts?collections=articles";
+      nodes[2].href = "/en/posts?collections=prose";
+      nodes[3].href = "/en/posts?collections=poetry";
+    </script>
   </header>
 
   <main>

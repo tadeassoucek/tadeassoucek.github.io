@@ -3,7 +3,8 @@
 <html>
 
 <head>
-  <title>Poetry in HTML&ensp;&dagger;&ensp;Tadeáš Souček
+  <title>Poetry in HTML
+    &bull; Tadeáš Souček
   </title>
 
   <meta charset="utf-8">
@@ -22,16 +23,29 @@
       
     
   
+
+  
 </head>
 
 <body id="top" theme="classic">
   <header>
     <nav>
       <a href="/en">Home</a>
+      
       <a href="/en/articles">Articles</a>
       <a href="/en/prose">Prose</a>
       <a href="/en/poetry">Poetry</a>
-      <a href="/en/about">About</a></nav>
+      <a href="/en/about">About</a>
+      
+      
+    </nav>
+
+    <script>
+      var nodes = document.querySelectorAll("body>header>nav>a");
+      nodes[1].href = "/en/posts?collections=articles";
+      nodes[2].href = "/en/posts?collections=prose";
+      nodes[3].href = "/en/posts?collections=poetry";
+    </script>
   </header>
 
   <main>
@@ -98,17 +112,17 @@ line<span class="hljs-selector-attr">[indent]</span> { <span class="hljs-attribu
 <p>Use a <code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;stanza&quot;</span>&gt;</span></code> element to wrap each stanza.</p>
 </li>
 <li>
-<p>Wrap each line in <code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;poem-line&quot;</span>&gt;</span></code> followed by a <code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span></code> element. You can decide for yourself whether you want to add a <code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span></code> element even after the last line in a stanza.</p>
+<p>Wrap each line in <code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;line&quot;</span>&gt;</span></code> followed by a <code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span></code> element. You can decide for yourself whether you want to add a <code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span></code> element even after the last line in a stanza.</p>
 </li>
 <li>
 <p>If you need to use indented lines:</p>
 <ol>
 <li>
-<p>Put an empty <code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;poem-line-indent&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span></code> inside the <code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;poem-line&quot;</span>&gt;</span></code> for each level of indentation. Remember to put it before the content of the line.</p>
+<p>Put an empty <code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;line-indent&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span></code> inside the <code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;line&quot;</span>&gt;</span></code> for each level of indentation. Remember to put it before the content of the line.</p>
 </li>
 <li>
 <p>Please note that you need to set the indent up using CSS:</p>
-<pre><code class="hljs language-css"><span class="hljs-selector-class">.poem-line-indent</span> { <span class="hljs-attribute">margin-right</span>: <span class="hljs-number">2.5em</span> }
+<pre><code class="hljs language-css"><span class="hljs-selector-class">.line-indent</span> { <span class="hljs-attribute">margin-right</span>: <span class="hljs-number">2.5em</span> }
 </code></pre>
 </li>
 </ol>
@@ -123,7 +137,7 @@ line<span class="hljs-selector-attr">[indent]</span> { <span class="hljs-attribu
 <p>Give the end of the line a class like <code>continuing</code>.</p>
 </li>
 <li>
-<p>In the continuing line add the content of the beginning line wrapped in a <code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;phantom&quot;</span>&gt;</span></code>. Put it before the content but after any eventual <code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;poem-line-indent&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span></code>s.</p>
+<p>In the continuing line add the content of the beginning line wrapped in a <code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;phantom&quot;</span>&gt;</span></code>. Put it before the content but after any eventual <code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;line-indent&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span></code>s.</p>
 </li>
 <li>
 <p>You have to hide the content of <code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;phantom&quot;</span>&gt;</span></code> yourself, ideally with CSS:</p>
@@ -136,12 +150,12 @@ line<span class="hljs-selector-attr">[indent]</span> { <span class="hljs-attribu
 <p>That is about all! Here is the example from the beginning:</p>
 <pre><code class="hljs language-html"><span class="hljs-tag">&lt;<span class="hljs-name">article</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;poem&quot;</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;stanza&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;poem-line&quot;</span>&gt;</span>There was an old party of Lyme<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;poem-line&quot;</span>&gt;</span>Who married three wives at one time.<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;poem-line&quot;</span>&gt;</span>When asked:<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;poem-line&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;poem-line-indent&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>&quot;Why the third?&quot;<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;poem-line&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;poem-line-indent&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>He replied: &quot;One&#x27;s absurd,<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;poem-line&quot;</span>&gt;</span>And bigamy, sir, is a crime.&quot;<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;line&quot;</span>&gt;</span>There was an old party of Lyme<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;line&quot;</span>&gt;</span>Who married three wives at one time.<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;line&quot;</span>&gt;</span>When asked:<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;line&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;line-indent&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>&quot;Why the third?&quot;<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;line&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;line-indent&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>He replied: &quot;One&#x27;s absurd,<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;line&quot;</span>&gt;</span>And bigamy, sir, is a crime.&quot;<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">article</span>&gt;</span>
 </code></pre>
@@ -152,11 +166,11 @@ line<span class="hljs-selector-attr">[indent]</span> { <span class="hljs-attribu
     <span class="hljs-tag">&lt;<span class="hljs-name">address</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;author&quot;</span>&gt;</span>By Charles Wright<span class="hljs-tag">&lt;/<span class="hljs-name">address</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">header</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;stanza&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;poem-line broken&quot;</span>&gt;</span>It&#x27;s linkage I&#x27;m talking about,<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;poem-line continuing&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;phantom&quot;</span>&gt;</span>It&#x27;s linkage I&#x27;m talking about,<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> and harmonies and structures,<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;poem-line&quot;</span>&gt;</span>And all the various things that lock our wrists to the past.<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;poem-line broken&quot;</span>&gt;</span>Something infinite behind everything appears,<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;poem-line continuing&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;phantom&quot;</span>&gt;</span>Something infinite behind everything appears,<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> and then disappears.<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;line broken&quot;</span>&gt;</span>It&#x27;s linkage I&#x27;m talking about,<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;line continuing&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;phantom&quot;</span>&gt;</span>It&#x27;s linkage I&#x27;m talking about,<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> and harmonies and structures,<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;line&quot;</span>&gt;</span>And all the various things that lock our wrists to the past.<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;line broken&quot;</span>&gt;</span>Something infinite behind everything appears,<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;line continuing&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;phantom&quot;</span>&gt;</span>Something infinite behind everything appears,<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> and then disappears.<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">footer</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">time</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;poem-date&quot;</span> <span class="hljs-attr">pubdate</span> <span class="hljs-attr">datetime</span>=<span class="hljs-string">&quot;1984-01-12&quot;</span>&gt;</span>January 12, 1984<span class="hljs-tag">&lt;/<span class="hljs-name">time</span>&gt;</span>

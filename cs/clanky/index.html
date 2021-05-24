@@ -3,7 +3,8 @@
 <html>
 
 <head>
-  <title>Seznam článků&ensp;&dagger;&ensp;Tadeáš Souček
+  <title>Články
+    &bull; Tadeáš Souček
   </title>
 
   <meta charset="utf-8">
@@ -15,28 +16,47 @@
   
     <link rel="stylesheet" href="/css/post-list.css">
   
+
+  
 </head>
 
 <body id="top" theme="classic">
   <header>
     <nav>
       <a href="/cs">Domů</a>
+      
       <a href="/cs/clanky">Články</a>
       <a href="/cs/proza">Próza</a>
       <a href="/cs/poezie">Poezie</a>
       <a href="/cs/about">About</a>
-  <a class="translation-link" href="/en/articles">In english</a>
-</nav>
+      
+      
+        <a class="translation-link" href="/en/articles">In english</a>
+      
+    </nav>
+
+    <script>
+      var nodes = document.querySelectorAll("body>header>nav>a");
+      nodes[1].href = "/cs/posty?collections=articles";
+      nodes[2].href = "/cs/posty?collections=prose";
+      nodes[3].href = "/cs/posty?collections=poetry";
+    </script>
   </header>
 
   <main>
     
 
 
-<h1 id="title">Seznam článků</h1>
+<script>
+  window.location = "/cs/posts?collections=article";
+</script>
 
+<noscript>
+  <h1 id="title">Články</h1>
 
   
+  
+    
   
     <div class="post-link">
       
@@ -57,8 +77,8 @@
     </div>
   
 
-
   
+    
   
     <div class="post-link">
       
@@ -79,7 +99,8 @@
     </div>
   
 
-
+  
+</noscript>
 
   </main>
 

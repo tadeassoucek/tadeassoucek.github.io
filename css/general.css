@@ -14,12 +14,12 @@ body[theme=classic] {
 body[theme=monochrome] {
   color: #aaa;
   background-color: #222;
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: "Noto Sans", Helvetica, Arial, sans-serif;
 }
 body > header, body > footer {
   display: flex;
   flex-direction: column;
-  align-items: left;
+  align-items: start;
   padding: 0.6em;
   max-width: calc(100vw - 16px);
   overflow-x: auto;
@@ -67,7 +67,7 @@ body[theme=monochrome] a {
   color: #ddd;
   text-decoration: underline;
 }
-a:hover {
+a:hover, a:focus {
   text-decoration: underline !important;
 }
 
@@ -159,7 +159,8 @@ h6:target {
 h1#title {
   text-align: center;
   font-size: 2.5em;
-  margin: 0.25em auto;
+  margin: 1em auto;
+  margin-top: 0.25em;
 }
 
 #subtitle {
