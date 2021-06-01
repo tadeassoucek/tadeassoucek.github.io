@@ -1,6 +1,7 @@
 code {
   font-size: 0.8em;
-  font-family: "Victor Mono", "Jetbrains Mono", "Iosevka", "Iosevka Custom", "Hack", "Consolas", monospace;
+  font-family: "Space Mono", "Courier New", Courier, monospace;
+  font-variant-ligatures: none;
   border: 1px solid #999;
   border-radius: 5px;
   padding: 2px 3px;

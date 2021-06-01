@@ -9,12 +9,12 @@ body {
 body[theme=classic] {
   color: black;
   background-color: white;
-  font-family: "Century Schoolbook", C059, "Times New Roman", serif;
+  font-family: Spectral, "Times New Roman", Times, serif;
 }
 body[theme=monochrome] {
   color: #aaa;
   background-color: #222;
-  font-family: "Noto Sans", Helvetica, Arial, sans-serif;
+  font-family: Spectral, "Times New Roman", Times, serif;
 }
 body > header, body > footer {
   display: flex;
@@ -115,6 +115,7 @@ body[theme=monochrome] hr {
 }
 
 h1 {
+  font-family: Roboto, Arial, Helvetica, sans-serif;
   font-size: 2em;
 }
 h1:target {
@@ -122,6 +123,7 @@ h1:target {
 }
 
 h2 {
+  font-family: Roboto, Arial, Helvetica, sans-serif;
   font-size: 1.55em;
 }
 h2:target {
@@ -129,6 +131,7 @@ h2:target {
 }
 
 h3 {
+  font-family: Roboto, Arial, Helvetica, sans-serif;
   font-size: 1.33em;
 }
 h3:target {
@@ -136,6 +139,7 @@ h3:target {
 }
 
 h4 {
+  font-family: Roboto, Arial, Helvetica, sans-serif;
   font-size: 1.2em;
 }
 h4:target {
@@ -143,6 +147,7 @@ h4:target {
 }
 
 h5 {
+  font-family: Roboto, Arial, Helvetica, sans-serif;
   font-size: 1em;
 }
 h5:target {
@@ -150,6 +155,7 @@ h5:target {
 }
 
 h6 {
+  font-family: Roboto, Arial, Helvetica, sans-serif;
   font-size: 0.8em;
 }
 h6:target {

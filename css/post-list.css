@@ -79,13 +79,13 @@ input[type=checkbox] {
   transition: border-color 0.35s;
 }
 body[theme=classic] #searchbox {
-  font-family: "Noto Sans", "Segoe UI", Helvetica, Arial, sans-serif;
+  font-family: Roboto, Arial, Helvetica, sans-serif;
   border-color: black;
   color: black;
   background-color: white;
 }
 body[theme=monochrome] #searchbox {
-  font-family: "Noto Sans", "Segoe UI", Helvetica, Arial, sans-serif;
+  font-family: Roboto, Arial, Helvetica, sans-serif;
   border-color: #aaa;
   color: #aaa;
   background-color: #222;
