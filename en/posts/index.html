@@ -19,33 +19,19 @@
   
     <link rel="stylesheet" href="/css/post-list.css">
   
-
-  
-    <script src="/js/script.js"></script>
-  
 </head>
 
 <body id="top" theme="classic">
   <header>
     <nav>
       <a href="/en">Home</a>
-      
-      <a href="/en/articles">Articles</a>
-      <a href="/en/prose">Prose</a>
-      <a href="/en/poetry">Poetry</a>
+      <a href="/en/posts">Posts</a>
       <a href="/en/about">About</a>
       
       
-        <a class="translation-link" href="/cs/posty">Česky</a>
+        <a class="translation-link" href="/cs/posty">🇨🇿</a>
       
     </nav>
-
-    <script>
-      var nodes = document.querySelectorAll("body>header>nav>a");
-      nodes[1].href = "/en/posts?collections=articles";
-      nodes[2].href = "/en/posts?collections=prose";
-      nodes[3].href = "/en/posts?collections=poetry";
-    </script>
   </header>
 
   <main>
@@ -86,11 +72,11 @@
   };
 
   function setTitle() {
-    q(".title").textContent = "Posts";
+    document.querySelector(".title").textContent = "Posts";
   }
 
   var fieldset = document.createElement("fieldset");
-  q("main", document.main).appendChild(fieldset);
+  document.body.querySelector("main").appendChild(fieldset);
   var checkboxDiv = document.createElement("div");
   fieldset.appendChild(checkboxDiv);
 
@@ -114,8 +100,8 @@
           params.collections = col.filter((c) => c != checkbox.value);
 
         if (params.collections.length == 1)
-          q("#title").textContent = capitalize(obj[params.collections[0]]);
-        else q("#title").textContent = 'Posts';
+          document.querySelector("#title").textContent = capitalize(obj[params.collections[0]]);
+        else document.querySelector("#title").textContent = 'Posts';
 
         if (onSearch) onSearch();
       };
@@ -338,7 +324,7 @@
                   {
                     lang: "cs",
                     url: "proza/informovane-rozhodnuti"
-                  }
+                  },
                 
               ],
             date: new Date("Sat, 03 Apr 2021 00:00:00 GMT")
@@ -411,8 +397,8 @@
       };
     });
 
-    var template = q("#post-link-template");
-    var postsDiv = q(".posts");
+    var template = document.querySelector("#post-link-template");
+    var postsDiv = document.querySelector(".posts");
     var templatesAvailable = 'content' in document.createElement('template');
 
     function render(searchResults) {
@@ -442,17 +428,17 @@
           var clone = template.content.cloneNode(true);
 
           if ((post.lang || {}).show)
-            q(".lang", clone).textContent = post.lang.name;
+            clone.querySelector(".lang").textContent = post.lang.name;
           else
-            q(".lang", clone).remove();
+            clone.querySelector(".lang").remove();
 
-          var title = q(".title", clone);
+          var title = clone.querySelector(".title");
           title.setAttribute("href", post.url);
           title.innerHTML = prepared.title;
 
-          q(".subtitle", clone).innerHTML = prepared.subtitle;
+          clone.querySelector(".subtitle").innerHTML = prepared.subtitle;
 
-          var translations = q(".translations", clone);
+          var translations = clone.querySelector(".translations");
           (post.translations || []).forEach(function(t) {
             var child = document.createElement("a");
             child.setAttribute("href", '/' + t.lang + '/' + t.url);
@@ -461,7 +447,7 @@
             translations.appendChild(child);
           });
 
-          var time = q("time", clone);
+          var time = clone.querySelector("time");
           time.setAttribute("datetime", post.date);
           time.textContent = post.date.getDate() + '/' + (post.date.getMonth() + 1) + '/' + post.date.getFullYear();
 
@@ -630,7 +616,7 @@
 
       <div>
          
-        <a class="translation-link" href="/cs/proza/informovane-rozhodnuti">Česky</a>
+        <a class="translation-link" href="/cs/proza/informovane-rozhodnuti">🇨🇿</a>
          
       </div>
 
@@ -751,27 +737,6 @@
       <span class="lang"></span>
       
 
-      <a href="/en/prose/">
-        <span class="title">Prose</span>
-      </a>
-
-      
-
-      <div>
-         
-        <a class="translation-link" href="/cs/proza">Česky</a>
-         
-      </div>
-
-      <time pubdate datetime="Thu, 01 Jan 1970 00:00:00 GMT">1/1/1970</time>
-    </div>
-    
-     
-    <div class="post-link">
-      
-      <span class="lang"></span>
-      
-
       <a href="/en/posts/">
         <span class="title">Posts</span>
       </a>
@@ -780,28 +745,7 @@
 
       <div>
          
-        <a class="translation-link" href="/cs/posty">Česky</a>
-         
-      </div>
-
-      <time pubdate datetime="Thu, 01 Jan 1970 00:00:00 GMT">1/1/1970</time>
-    </div>
-    
-     
-    <div class="post-link">
-      
-      <span class="lang"></span>
-      
-
-      <a href="/en/poetry/">
-        <span class="title">Poetry</span>
-      </a>
-
-      
-
-      <div>
-         
-        <a class="translation-link" href="/cs/poezie">Česky</a>
+        <a class="translation-link" href="/cs/posty">🇨🇿</a>
          
       </div>
 
@@ -822,28 +766,7 @@
 
       <div>
          
-        <a class="translation-link" href="/cs/">Česky</a>
-         
-      </div>
-
-      <time pubdate datetime="Thu, 01 Jan 1970 00:00:00 GMT">1/1/1970</time>
-    </div>
-    
-     
-    <div class="post-link">
-      
-      <span class="lang"></span>
-      
-
-      <a href="/en/articles/">
-        <span class="title">Articles</span>
-      </a>
-
-      
-
-      <div>
-         
-        <a class="translation-link" href="/cs/clanky">Česky</a>
+        <a class="translation-link" href="/cs/">🇨🇿</a>
          
       </div>
 
@@ -864,16 +787,13 @@
 
       <div>
          
-        <a class="translation-link" href="/cs/about">Česky</a>
+        <a class="translation-link" href="/cs/about">🇨🇿</a>
          
       </div>
 
       <time pubdate datetime="Thu, 01 Jan 1970 00:00:00 GMT">1/1/1970</time>
     </div>
     
-     
-     
-     
      
      
      
@@ -903,11 +823,11 @@
   </main>
 
   <footer>
-    
+    <address>
+      <a href="/en/about/#contacts">Contact</a>
+    </address>
 
-    <a href="#top">
-      Back to top
-    </a>
+    <a href="#top">Back to top</a>
   </footer>
 </body>
 

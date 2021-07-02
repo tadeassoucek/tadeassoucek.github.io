@@ -26,39 +26,22 @@
       
     
   
-
-  
 </head>
 
 <body id="top" theme="classic">
   <header>
     <nav>
       <a href="/en">Home</a>
-      
-      <a href="/en/articles">Articles</a>
-      <a href="/en/prose">Prose</a>
-      <a href="/en/poetry">Poetry</a>
+      <a href="/en/posts">Posts</a>
       <a href="/en/about">About</a>
       
       
     </nav>
-
-    <script>
-      var nodes = document.querySelectorAll("body>header>nav>a");
-      nodes[1].href = "/en/posts?collections=articles";
-      nodes[2].href = "/en/posts?collections=prose";
-      nodes[3].href = "/en/posts?collections=poetry";
-    </script>
   </header>
 
   <main>
     
 <header class="post-header">
-  
-  
-    <ul class="breadcrumbs"><li><a href="/en/articles/">Articles</a></li></ul>
-  
-
   <h1 id="title">Poetry in HTML</h1>
 
   
@@ -105,7 +88,7 @@ line<span class="hljs-selector-pseudo">::after</span> {
 
 line<span class="hljs-selector-attr">[indent]</span> { <span class="hljs-attribute">margin-left</span>: <span class="hljs-number">2.5em</span> }
 </code></pre>
-<p>Really, you could! The HTML5 mafia would not run you over. However as with many things, the fact that you can doesn’t necessarily mean that you should. The point of HTML is to describe the semantics of a web page, and that is rendered void by the use of non-standard elements. To communicate the semantics of the poem effectively, we should use already existing elements that are as close to the ones we need as possible.</p>
+<p>Really, you could! The HTML5 mafia would not run you over<a href="#html5-mafia-note" id="html5-mafia-ref" aria-describedby="footnotes-label" role="doc-noteref" class="footnote-ref" title="Footnote: That is not to say that they shouldn’t.">[1]</a>. However as with many things, the fact that you can doesn’t necessarily mean that you should. The point of HTML is to describe the semantics of a web page, and that is rendered void by the use of non-standard elements. To communicate the semantics of the poem effectively, we should use already existing elements that are as close to the ones we need as possible.</p>
 <p>My recommendations for marking up a poem in HTML go like this:</p>
 <ol>
 <li>
@@ -134,23 +117,21 @@ line<span class="hljs-selector-attr">[indent]</span> { <span class="hljs-attribu
 <p>If you need to add <a href="https://en.wikipedia.org/wiki/Dropped_line">broken/dropped lines</a>:</p>
 <ol>
 <li>
-<p>Give the beginning of the line a class like <code>broken</code> or <code>dropped</code>.</p>
+<p>Use a <code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span></code> element to break the line in two. Now, you may notice that this doesn’t indent the rest of the line so it looks like a continuation. To achieve that, add the content of the first part of the line wrapped in a <code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;phantom&quot;</span>&gt;</span></code> after the <code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span></code>.</p>
 </li>
 <li>
-<p>Give the end of the line a class like <code>continuing</code>.</p>
-</li>
-<li>
-<p>In the continuing line add the content of the beginning line wrapped in a <code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;phantom&quot;</span>&gt;</span></code>. Put it before the content but after any eventual <code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;line-indent&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span></code>s.</p>
-</li>
-<li>
-<p>You have to hide the content of <code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;phantom&quot;</span>&gt;</span></code> yourself, ideally with CSS:</p>
+<p>You have to hide the content of <code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;phantom&quot;</span>&gt;</span></code> yourself:</p>
 <pre><code class="hljs language-css"><span class="hljs-selector-class">.phantom</span> { <span class="hljs-attribute">visibility</span>: hidden }
 </code></pre>
+<p>This way, the second part of the line will appear on the next as a continuation of the first part.</p>
 </li>
 </ol>
 </li>
+<li>
+<p>Information about the poem (title, author, publication date etc.) should go into the <code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">header</span>&gt;</span></code>/<code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">footer</span>&gt;</span></code> elements, as appropriate. Here, general rules apply: the title should be marked with a <code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span></code>, the author with an <code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">address</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;author&quot;</span>&gt;</span></code> or maybe a <code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;author&quot;</span>&gt;</span></code> — really, it’s up to you.</p>
+</li>
 </ol>
-<p>That is about all! Here is the example from the beginning:</p>
+<p>And that is about all! Here is the example from the beginning:</p>
 <pre><code class="hljs language-html"><span class="hljs-tag">&lt;<span class="hljs-name">article</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;poem&quot;</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;stanza&quot;</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;line&quot;</span>&gt;</span>There was an old party of Lyme<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
@@ -169,11 +150,15 @@ line<span class="hljs-selector-attr">[indent]</span> { <span class="hljs-attribu
     <span class="hljs-tag">&lt;<span class="hljs-name">address</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;author&quot;</span>&gt;</span>By Charles Wright<span class="hljs-tag">&lt;/<span class="hljs-name">address</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">header</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;stanza&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;line broken&quot;</span>&gt;</span>It&#x27;s linkage I&#x27;m talking about,<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;line continuing&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;phantom&quot;</span>&gt;</span>It&#x27;s linkage I&#x27;m talking about,<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> and harmonies and structures,<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;line&quot;</span>&gt;</span>
+      It&#x27;s linkage I&#x27;m talking about,<span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;phantom&quot;</span>&gt;</span>It&#x27;s linkage I&#x27;m talking about,<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> and harmonies and structures,
+    <span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;line&quot;</span>&gt;</span>And all the various things that lock our wrists to the past.<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;line broken&quot;</span>&gt;</span>Something infinite behind everything appears,<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;line continuing&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;phantom&quot;</span>&gt;</span>Something infinite behind everything appears,<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> and then disappears.<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;line&quot;</span>&gt;</span>
+      Something infinite behind everything appears,<span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;phantom&quot;</span>&gt;</span>Something infinite behind everything appears,<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> and then disappears.
+    <span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">footer</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">time</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;poem-date&quot;</span> <span class="hljs-attr">pubdate</span> <span class="hljs-attr">datetime</span>=<span class="hljs-string">&quot;1984-01-12&quot;</span>&gt;</span>January 12, 1984<span class="hljs-tag">&lt;/<span class="hljs-name">time</span>&gt;</span>
@@ -181,31 +166,34 @@ line<span class="hljs-selector-attr">[indent]</span> { <span class="hljs-attribu
 <span class="hljs-tag">&lt;/<span class="hljs-name">article</span>&gt;</span>
 </code></pre>
 <p>I can’t stress this enough: these are just suggestions. Semantics are one of those things where there are no right or wrong answers, just a bunch of “that makes sense” and “I mean, at least it works, I guess” answers. I hope my suggestions tend more toward the former side.</p>
-<p>If you disagree, feel free to let me know by either <a href="/en/about#contacts">contacting me directly</a> or clicking the <strong>“Issue a correction”</strong> link at the bottom of this page.</p>
+<p>If you disagree, feel free to let me know by <a href="/en/about#contacts">contacting me</a>.</p>
 
 
 
 
+
+  <footer class="footnotes" role="doc-endnotes">
+    <h2 id="footnotes">Footnotes:</h2>
+    <ol>
+      
+        <li id="html5-mafia-note" role="doc-endnote">
+           That is not to say that they shouldn’t. 
+          <a href="#html5-mafia-ref" role="doc-backlink">↩</a>
+        </li>
+      
+    </ol>
+  </footer>
 
 
 
   </main>
 
   <footer>
-    
-      <div>
-        <a target="blank" href="https://github.com/tadeassoucek/my-site/issues/new?title=&quot;Poetry in HTML%22%20%E2%80%94%20%5BYOUR%20CORRECTION%20TITLE%20HERE%5D&body=%5BYOUR%20CORRECTION%20HERE%5D&labels=correction">
-          Issue a correction.</a>
+    <address>
+      <a href="/en/about/#contacts">Contact</a>
+    </address>
 
-        <a target="blank" href="https://github.com/tadeassoucek/my-site/issues/new?title=&quot;Poetry in HTML%22%20%E2%80%94%20%5BYOUR%20QUESTION%20TITLE%20HERE%5D&body=%5BYOUR%20QUESTION%20HERE%5D&labels=question">
-          Ask a question.
-        </a>
-      </div>
-    
-
-    <a href="#top">
-      Back to top
-    </a>
+    <a href="#top">Back to top</a>
   </footer>
 </body>
 
