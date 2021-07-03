@@ -29,9 +29,21 @@
       <a href="/cs/posty">Posty</a>
       <a href="/cs/about">About</a>
       
-      
-        <a class="translation-link" href="/en/prose/informed-decision">🇬🇧</a>
-      
+      <select id="translation-select">
+    <option value="cs">🇨🇿</option>
+    
+      <option value="en" data-url="prose/informed-decision">🇬🇧</option>
+    
+  </select>
+
+  <script>
+    var el = document.getElementById("translation-select");
+    el.onchange = function () {
+      var selected = el.children[el.selectedIndex];
+      if (selected.value !== "cs")
+        window.location = "/" + selected.value + "/" + selected.dataset.url;
+    };
+  </script>
     </nav>
   </header>
 

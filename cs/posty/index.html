@@ -28,9 +28,21 @@
       <a href="/cs/posty">Posty</a>
       <a href="/cs/about">About</a>
       
-      
-        <a class="translation-link" href="/en/posts">🇬🇧</a>
-      
+      <select id="translation-select">
+    <option value="cs">🇨🇿</option>
+    
+      <option value="en" data-url="posts">🇬🇧</option>
+    
+  </select>
+
+  <script>
+    var el = document.getElementById("translation-select");
+    el.onchange = function () {
+      var selected = el.children[el.selectedIndex];
+      if (selected.value !== "cs")
+        window.location = "/" + selected.value + "/" + selected.dataset.url;
+    };
+  </script>
     </nav>
   </header>
 
@@ -511,7 +523,6 @@
     searchbox.oninput = onSearch;
   </script>
 
-  
 
   <noscript>
      
@@ -526,10 +537,6 @@
 
       
 
-      <div>
-        
-      </div>
-
       <time pubdate datetime="Tue, 01 Jun 2021 00:00:00 GMT">1/6/2021</time>
     </div>
     
@@ -543,10 +550,6 @@
 
       
 
-      <div>
-        
-      </div>
-
       <time pubdate datetime="Tue, 01 Jun 2021 00:00:00 GMT">1/6/2021</time>
     </div>
     
@@ -559,10 +562,6 @@
       </a>
 
       
-
-      <div>
-        
-      </div>
 
       <time pubdate datetime="Tue, 01 Jun 2021 00:00:00 GMT">1/6/2021</time>
     </div>
@@ -579,10 +578,6 @@
 
       
 
-      <div>
-        
-      </div>
-
       <time pubdate datetime="Fri, 07 May 2021 00:00:00 GMT">7/5/2021</time>
     </div>
     
@@ -598,10 +593,6 @@
 
       
 
-      <div>
-        
-      </div>
-
       <time pubdate datetime="Wed, 14 Apr 2021 00:00:00 GMT">14/4/2021</time>
     </div>
     
@@ -614,12 +605,6 @@
       </a>
 
       
-
-      <div>
-         
-        <a class="translation-link" href="/en/prose/informed-decision">🇬🇧</a>
-         
-      </div>
 
       <time pubdate datetime="Sun, 04 Apr 2021 00:00:00 GMT">4/4/2021</time>
     </div>
@@ -634,10 +619,6 @@
       </a>
 
       
-
-      <div>
-        
-      </div>
 
       <time pubdate datetime="Fri, 26 Mar 2021 00:00:00 GMT">26/3/2021</time>
     </div>
@@ -654,10 +635,6 @@
 
       
 
-      <div>
-        
-      </div>
-
       <time pubdate datetime="Thu, 07 Jan 2021 00:00:00 GMT">7/1/2021</time>
     </div>
     
@@ -670,10 +647,6 @@
       </a>
 
       
-
-      <div>
-        
-      </div>
 
       <time pubdate datetime="Thu, 17 Dec 2020 00:00:00 GMT">17/12/2020</time>
     </div>
@@ -690,10 +663,6 @@
 
       
 
-      <div>
-        
-      </div>
-
       <time pubdate datetime="Mon, 07 Dec 2020 00:00:00 GMT">7/12/2020</time>
     </div>
     
@@ -709,10 +678,6 @@
 
       
 
-      <div>
-        
-      </div>
-
       <time pubdate datetime="Fri, 08 May 2020 00:00:00 GMT">8/5/2020</time>
     </div>
     
@@ -727,10 +692,6 @@
       </a>
 
       
-
-      <div>
-        
-      </div>
 
       <time pubdate datetime="Thu, 01 Jan 1970 00:00:00 GMT">1/1/1970</time>
     </div>
@@ -750,12 +711,6 @@
 
       
 
-      <div>
-         
-        <a class="translation-link" href="/en/posts">🇬🇧</a>
-         
-      </div>
-
       <time pubdate datetime="Thu, 01 Jan 1970 00:00:00 GMT">1/1/1970</time>
     </div>
     
@@ -770,12 +725,6 @@
       </a>
 
       
-
-      <div>
-         
-        <a class="translation-link" href="/en/">🇬🇧</a>
-         
-      </div>
 
       <time pubdate datetime="Thu, 01 Jan 1970 00:00:00 GMT">1/1/1970</time>
     </div>
@@ -792,12 +741,6 @@
 
       
 
-      <div>
-         
-        <a class="translation-link" href="/en/about">🇬🇧</a>
-         
-      </div>
-
       <time pubdate datetime="Thu, 01 Jan 1970 00:00:00 GMT">1/1/1970</time>
     </div>
     
@@ -812,10 +755,6 @@
       </a>
 
       
-
-      <div>
-        
-      </div>
 
       <time pubdate datetime="Thu, 01 Jan 1970 00:00:00 GMT">1/1/1970</time>
     </div>

@@ -26,7 +26,19 @@
       <a href="//"></a>
       <a href="//about">About</a>
       
-      
+      <select id="translation-select">
+    <option value=""></option>
+    
+  </select>
+
+  <script>
+    var el = document.getElementById("translation-select");
+    el.onchange = function () {
+      var selected = el.children[el.selectedIndex];
+      if (selected.value !== "")
+        window.location = "/" + selected.value + "/" + selected.dataset.url;
+    };
+  </script>
     </nav>
   </header>
 

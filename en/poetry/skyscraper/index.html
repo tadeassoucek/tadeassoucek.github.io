@@ -35,7 +35,19 @@
       <a href="/en/posts">Posts</a>
       <a href="/en/about">About</a>
       
-      
+      <select id="translation-select">
+    <option value="en">🇬🇧</option>
+    
+  </select>
+
+  <script>
+    var el = document.getElementById("translation-select");
+    el.onchange = function () {
+      var selected = el.children[el.selectedIndex];
+      if (selected.value !== "en")
+        window.location = "/" + selected.value + "/" + selected.dataset.url;
+    };
+  </script>
     </nav>
   </header>
 
