@@ -4,29 +4,10 @@
   padding-bottom: 0em;
   margin-bottom: 2em;
   border-bottom: 2px solid;
-}
-body[theme=classic] .post-header {
   border-color: black;
-}
-body[theme=monochrome] .post-header {
-  border-color: #aaa;
 }
 .post-header > * {
   margin: 0.5em auto;
-}
-.post-header .breadcrumbs {
-  z-index: 0;
-  text-align: center;
-  list-style: none;
-  padding: 0px;
-  margin-bottom: 0em;
-}
-.post-header .breadcrumbs li {
-  display: inline;
-}
-.post-header .breadcrumbs li::after {
-  margin: 0px 0.5em;
-  content: "/";
 }
 .post-header h1#title {
   margin: 0px;
@@ -43,14 +24,9 @@ body[theme=monochrome] .post-header {
   list-style: none;
   font-size: 0.7em;
   border: 1px solid;
+  border-color: #e065c2;
   border-radius: 5px;
   padding: 2px 8px;
-}
-body[theme=classic] .post-header .tags > li {
-  border-color: #e065c2;
-}
-body[theme=monochrome] .post-header .tags > li {
-  border-color: #555;
 }
 .post-header .tags > li:not(:last-of-type) {
   margin-right: 5px;
@@ -99,6 +75,8 @@ blockquote {
   margin: 1.5em 0em;
   padding: 0px 2em;
   border-left: 5px solid;
+  border-color: #e065c2;
+  color: black;
   font-style: italic;
 }
 blockquote em {
@@ -107,10 +85,12 @@ blockquote em {
 
 .footnotes {
   border-top: 1px solid black;
-  width: 60%;
   margin: auto;
   margin-top: 3em;
   padding: 0px 1em;
+}
+.footnotes li:target {
+  text-decoration: underline;
 }
 
 img {

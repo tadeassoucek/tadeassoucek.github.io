@@ -3,6 +3,9 @@ html {
 }
 
 body {
+  color: black;
+  background-color: white;
+  font-family: Spectral, "Times New Roman", Times, serif;
   position: absolute;
   top: 0;
   bottom: 0;
@@ -15,21 +18,8 @@ body {
   overflow-x: hidden;
   overflow-y: auto;
 }
-body[theme=classic] {
-  color: black;
-  background-color: white;
-  font-family: Spectral, "Times New Roman", Times, serif;
-}
-body[theme=classic] > header, body[theme=classic] > footer {
+body > header, body > footer {
   border-color: black;
-}
-body[theme=monochrome] {
-  color: #aaa;
-  background-color: #222;
-  font-family: Spectral, "Times New Roman", Times, serif;
-}
-body[theme=monochrome] > header, body[theme=monochrome] > footer {
-  border-color: #aaa;
 }
 body > header, body > footer {
   padding: 0.6em;
@@ -61,13 +51,9 @@ body > footer > * {
   margin: 0.2em 0px;
 }
 
-body[theme=classic] a {
+a {
   color: #2853E2;
   text-decoration: none;
-}
-body[theme=monochrome] a {
-  color: #ddd;
-  text-decoration: underline;
 }
 a:hover, a:focus {
   text-decoration: underline !important;
@@ -86,13 +72,8 @@ table:not(.excluded) {
 }
 table:not(.excluded), table:not(.excluded) th, table:not(.excluded) td {
   border: 1px solid;
-  border-collapse: collapse;
-}
-body[theme=classic] table:not(.excluded), body[theme=classic] table:not(.excluded) th, body[theme=classic] table:not(.excluded) td {
   border-color: black;
-}
-body[theme=monochrome] table:not(.excluded), body[theme=monochrome] table:not(.excluded) th, body[theme=monochrome] table:not(.excluded) td {
-  border-color: #aaa;
+  border-collapse: collapse;
 }
 table:not(.excluded) th, table:not(.excluded) td {
   padding: 5px 10px;
@@ -108,12 +89,7 @@ hr {
   width: 50%;
   border: none;
   height: 1px;
-}
-body[theme=classic] hr {
   background-color: black;
-}
-body[theme=monochrome] hr {
-  background-color: #aaa;
 }
 
 #translation-select {
@@ -190,10 +166,7 @@ h1#title {
   margin-top: 0px;
 }
 
-body[theme=classic] time, body[theme=classic] time::after, body[theme=classic] time::before {
-  color: #999;
-}
-body[theme=monochrome] time, body[theme=monochrome] time::after, body[theme=monochrome] time::before {
+time, time::after, time::before {
   color: #999;
 }
 
@@ -235,13 +208,8 @@ body[theme=monochrome] time, body[theme=monochrome] time::after, body[theme=mono
     text-decoration: underline;
   }
   main a::after {
-    content: " (" attr(href) ")";
-  }
-  body[theme=classic] main a::after {
     color: black;
-  }
-  body[theme=monochrome] main a::after {
-    color: #aaa;
+    content: " (" attr(href) ")";
   }
   main .tldr-link {
     display: none;

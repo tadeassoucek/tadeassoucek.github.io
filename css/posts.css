@@ -5,34 +5,33 @@
   text-align: center;
   width: 80%;
   margin: auto;
-  padding: 1em 0px;
+  padding: 1em;
+  transition: 0.5s box-shadow;
+  border-radius: 10px;
+}
+.post-link:hover, .post-link:focus {
+  box-shadow: 0px 0px 4px #bbb;
 }
 .post-link .title {
   font-size: 1.3em;
+  line-height: 1.25em;
 }
 .post-link .lang {
-  font-size: 0.5em;
-  border: 1px solid;
-  border-radius: 5px;
-  padding: 1px 4px;
+  font-size: 0.6em;
 }
-body[theme=classic] .post-link .lang {
-  border-color: #e065c2;
-}
-body[theme=monochrome] .post-link .lang {
-  border-color: #555;
-}
-.post-link .translation-link {
+.post-link .translations {
   font-size: 0.8em;
+}
+.post-link .translations .translation-link {
   margin: 5px 0px;
 }
-.post-link .translation-link:last-child::before {
+.post-link .translations .translation-link:last-child::before {
   content: "(";
 }
-.post-link .translation-link::after {
+.post-link .translations .translation-link::after {
   content: ")";
 }
-.post-link .translation-link:not(:last-child)::after {
+.post-link .translations .translation-link:not(:last-child)::after {
   content: ", ";
 }
 .post-link .subtitle {
@@ -70,6 +69,10 @@ input[type=checkbox] {
 
 #searchbox {
   border: 2px solid;
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+  border-color: black;
+  color: black;
+  background-color: white;
   display: block;
   width: 100%;
   padding: 10px 15px;
@@ -78,25 +81,9 @@ input[type=checkbox] {
   box-sizing: border-box;
   transition: border-color 0.35s;
 }
-body[theme=classic] #searchbox {
-  font-family: Roboto, Arial, Helvetica, sans-serif;
-  border-color: black;
-  color: black;
-  background-color: white;
-}
-body[theme=monochrome] #searchbox {
-  font-family: Roboto, Arial, Helvetica, sans-serif;
-  border-color: #aaa;
-  color: #aaa;
-  background-color: #222;
-}
 
-body[theme=classic] #searchbox:focus {
+#searchbox:focus {
   border-color: #e065c2;
-  outline: none;
-}
-body[theme=monochrome] #searchbox:focus {
-  border-color: #555;
   outline: none;
 }
 
@@ -119,4 +106,4 @@ body[theme=monochrome] #searchbox:focus {
   }
 }
 
-/*# sourceMappingURL=post-list.css.map */
+/*# sourceMappingURL=posts.css.map */

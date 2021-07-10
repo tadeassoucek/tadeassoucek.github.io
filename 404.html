@@ -1,13 +1,14 @@
+
 <!DOCTYPE html>
 
 <html>
 
 <head>
-  <title>Error 404
-    &bull; Tadeáš Souček
-  </title>
+  <title>404 &bull; Tadeáš Souček</title>
 
   <meta charset="utf-8">
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -16,46 +17,34 @@
   <link rel="shortcut icon" type="image/png" href="/favicon.png">
 
   <link rel="stylesheet" href="/css/general.css">
-  
 </head>
 
-<body id="top" theme="classic">
+<body theme="classic">
+  <a id="top"></a>
+
   <header>
     <nav>
-      <a href="/"></a>
-      <a href="//"></a>
-      <a href="//about">About</a>
-      
+      <a href="/en">Home</a>
+      <a href="/en/posts">Posts</a>
+      <a href="/en/about">About</a>
       <select id="translation-select">
-    <option value=""></option>
-    
-  </select>
-
-  <script>
-    var el = document.getElementById("translation-select");
-    el.onchange = function () {
-      var selected = el.children[el.selectedIndex];
-      if (selected.value !== "")
-        window.location = "/" + selected.value + "/" + selected.dataset.url;
-    };
-  </script>
+        <option value="en">🇬🇧</option>
+      </select>
     </nav>
   </header>
 
   <main>
-    
-<h1>Error 404</h1>
+    <h1>Error 404</h1>
 
-<p>The page you're trying to access doesn't exist.</p>
-
+    <p>There's no such thing here!</p>
   </main>
 
   <footer>
     <address>
-      <a href="//about/#contacts"></a>
+      <a href="/en/about/#contacts">Contact</a>
     </address>
 
-    <a href="#top"></a>
+    <a href="#top">Back to top</a>
   </footer>
 </body>
 
